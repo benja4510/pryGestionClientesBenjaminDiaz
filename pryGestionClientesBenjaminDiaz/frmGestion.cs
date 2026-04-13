@@ -19,42 +19,28 @@ namespace pryGestionClientesBenjaminDiaz
             InitializeComponent();
         }
 
-        //Registro
-        private struct RegCliente
-        {
-            public Int32 Codigo;
-            public String Usuario;
-            public Decimal Deuda;
-            public Decimal Limite;
-        }
-
-        //vector 
-        private RegCliente[] Clientes = new RegCliente[10];
-
-        //Indice
-        private Int32 IND = 0;
-
+        
 
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
             //if para validar que el indice no supere la cantidad de clientes que se pueden cargar, sino muestra un mensaje de error
-            if (IND < Clientes.Length)
+            if (Vectores.IND < Vectores.Clientes.Length)
             {
                 Int32 i = 0; 
-                while (Clientes[IND].Codigo != Convert.ToInt32(txtCodigo.Text) &&  i < IND)
+                while (Vectores.Clientes[Vectores.IND].Codigo != Convert.ToInt32(txtCodigo.Text) &&  i < Vectores.IND)
                 {
                     i++;
                 }
                 
-                if(i==IND)
+                if(i==Vectores.IND)
                 {
 
-                    Clientes[IND].Codigo = Convert.ToInt32(txtCodigo.Text);
-                    Clientes[IND].Usuario = txtUsuario.Text;
-                    Clientes[IND].Deuda = Convert.ToDecimal(txtDeuda.Text);
-                    Clientes[IND].Limite = Convert.ToDecimal(txtLimite.Text);
-                    IND++; //O IND+1;
+                    Vectores.Clientes[Vectores.IND].Codigo = Convert.ToInt32(txtCodigo.Text);
+                    Vectores.Clientes[Vectores.IND].Usuario = txtUsuario.Text;
+                    Vectores.Clientes[Vectores.IND].Deuda = Convert.ToDecimal(txtDeuda.Text);
+                    Vectores.Clientes[Vectores.IND].Limite = Convert.ToDecimal(txtLimite.Text);
+                    Vectores.IND++; //O IND+1;
                            //Limpio los txt para cargar otro cliente
                     txtCodigo.Text = "";
                     txtDeuda.Text = "";
@@ -79,11 +65,11 @@ namespace pryGestionClientesBenjaminDiaz
         {
             Decimal Total = 0; //Variable para acumular la deuda total de los clientes
             dgvClientes.Rows.Clear(); //Limpio la grilla para mostrar los clientes cargados
-            for (Int32 i = 0; i < IND; i++)
+            for (Int32 i = 0; i < Vectores.IND; i++)
             {
                 //Agrego a la grilla los clientes cargados, mostrando su codigo, usuario, deuda y limite
-                dgvClientes.Rows.Add("Codigo: " + Clientes[i].Codigo + " Usuario: " + Clientes[i].Usuario + " Limite " + Clientes[i].Limite + " Deuda: " + Clientes[i].Deuda);
-                Total += Total + Clientes[i].Deuda; //Acumulo la deuda total de los clientes
+                dgvClientes.Rows.Add("Codigo: " + Vectores.Clientes[i].Codigo + " Usuario: " + Vectores.Clientes[i].Usuario + " Limite " + Vectores.Clientes[i].Limite + " Deuda: " + Vectores.Clientes[i].Deuda);
+                Total += Total + Vectores.Clientes[i].Deuda; //Acumulo la deuda total de los clientes
 
 
             }
@@ -125,21 +111,21 @@ namespace pryGestionClientesBenjaminDiaz
 
         private void precarga()
         {
-            Clientes[IND].Codigo = 10;
-            Clientes[IND].Usuario = "Benjamin Diaz";
-            Clientes[IND].Deuda = 1000;
-            Clientes[IND].Limite = 10000;
-            IND++; //Actualizo el indice para que se puedan cargar mas clientes despues de la precarga
-            Clientes[IND].Codigo = 20;
-            Clientes[IND].Usuario = "Maria Gomez";
-            Clientes[IND].Deuda = 0;
-            Clientes[IND].Limite = 20000;
-            IND++; //Actualizo el indice para que se puedan cargar mas clientes despues de la precarga
-            Clientes[IND].Codigo = 30;
-            Clientes[IND].Usuario = "Juan Perez";
-            Clientes[IND].Deuda = 3000;
-            Clientes[IND].Limite = 30000;
-            IND++; //Actualizo el indice para que se puedan cargar mas clientes despues de la precarga
+            Vectores.Clientes[Vectores.IND].Codigo = 10;
+            Vectores.Clientes[Vectores.IND].Usuario = "Benjamin Diaz";
+            Vectores.Clientes[Vectores.IND].Deuda = 1000;
+            Vectores.Clientes[Vectores.IND].Limite = 10000;
+            Vectores.IND++; //Actualizo el indice para que se puedan cargar mas clientes despues de la precarga
+            Vectores.Clientes[Vectores.IND].Codigo = 20;
+            Vectores.Clientes[Vectores.IND].Usuario = "Maria Gomez";
+            Vectores.Clientes[Vectores.IND].Deuda = 0;
+            Vectores.Clientes[Vectores.IND].Limite = 20000;
+            Vectores.IND++; //Actualizo el indice para que se puedan cargar mas clientes despues de la precarga
+            Vectores.Clientes[Vectores.IND].Codigo = 30;
+            Vectores.Clientes[Vectores.IND].Usuario = "Juan Perez";
+            Vectores.Clientes[Vectores.IND].Deuda = 3000;
+            Vectores.Clientes[Vectores.IND].Limite = 30000;
+            Vectores.IND++; //Actualizo el indice para que se puedan cargar mas clientes despues de la precarga
         }
 
         private void btnDeudores_Click(object sender, EventArgs e)
@@ -147,12 +133,12 @@ namespace pryGestionClientesBenjaminDiaz
 
             Decimal Total = 0; //Variable para acumular la deuda total de los clientes
             dgvClientes.Rows.Clear(); //Limpio la grilla para mostrar los clientes cargados
-            for (Int32 i = 0; i < IND; i++)
+            for (Int32 i = 0; i < Vectores.IND; i++)
             {
-                if (Clientes[i].Deuda > 0)
+                if (Vectores.Clientes[i].Deuda > 0)
                 {
-                    dgvClientes.Rows.Add("Codigo: " + Clientes[i].Codigo + " Usuario: " + Clientes[i].Usuario + " Limite " + Clientes[i].Limite + " Deuda: " + Clientes[i].Deuda);
-                    Total += Total + Clientes[i].Deuda; //Acumulo la deuda total de los clientes
+                    dgvClientes.Rows.Add("Codigo: " + Vectores.Clientes[i].Codigo + " Usuario: " + Vectores.Clientes[i].Usuario + " Limite " + Vectores.Clientes[i].Limite + " Deuda: " + Vectores.Clientes[i].Deuda);
+                    Total += Total + Vectores.Clientes[i].Deuda; //Acumulo la deuda total de los clientes
 
                 }   
             }

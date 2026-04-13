@@ -16,7 +16,7 @@ namespace pryGestionClientesBenjaminDiaz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGestion());
+            Application.Run(new frmManejoClientes());
         }
     }
 }
