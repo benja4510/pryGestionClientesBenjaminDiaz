@@ -32,6 +32,7 @@ namespace pryGestionClientesBenjaminDiaz
         private void frmManejoClientes_Load(object sender, EventArgs e)
         {
            Vectores.precarga(); //Llamo al metodo precarga para cargar los clientes predefinidos en el vector Clientes
+            
         }
 
         private void listadoDeClientesOrdenadosPorToolStripMenuItem_Click(object sender, EventArgs e)

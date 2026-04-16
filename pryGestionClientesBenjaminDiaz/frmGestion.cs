@@ -84,7 +84,7 @@ namespace pryGestionClientesBenjaminDiaz
         private void frmGestion_Load(object sender, EventArgs e)
         {
             
-            precarga(); //Llamo a la funcion precarga para cargar algunos clientes de ejemplo al iniciar el formulario
+            Vectores.precarga(); //Llamo a la funcion precarga para cargar algunos clientes de ejemplo al iniciar el formulario
             Listar(); //Llamo a la funcion btnListar para mostrar los clientes cargados en la grilla al iniciar el formulario
         }
 
