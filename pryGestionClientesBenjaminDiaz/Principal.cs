@@ -41,5 +41,22 @@ namespace pryGestionClientesBenjaminDiaz
             formulario.MdiParent = this;
             formulario.Show();
         }
+
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void listadoDeClientesDeudoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmClientesDeudores();
+            formulario.Show();
+        }
+
+        private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmListadoClientes();
+            formulario.Show();
+        }
     }
 }

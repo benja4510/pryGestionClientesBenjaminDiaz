@@ -140,6 +140,7 @@
             this.ClientSize = new System.Drawing.Size(523, 264);
             this.Controls.Add(this.gboCargaDatos);
             this.Name = "frmCargarClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCargarClientes";
             this.gboCargaDatos.ResumeLayout(false);
             this.gboCargaDatos.PerformLayout();

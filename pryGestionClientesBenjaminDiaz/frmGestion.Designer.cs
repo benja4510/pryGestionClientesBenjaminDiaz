@@ -171,8 +171,7 @@
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(458, 208);
             this.dgvClientes.TabIndex = 0;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
-            // 
+            
             // Column1
             // 
             this.Column1.HeaderText = "Codigo";
@@ -233,6 +232,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gboCarga);
             this.Name = "frmGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Clientes";
             this.Load += new System.EventHandler(this.frmGestion_Load);
             this.gboCarga.ResumeLayout(false);

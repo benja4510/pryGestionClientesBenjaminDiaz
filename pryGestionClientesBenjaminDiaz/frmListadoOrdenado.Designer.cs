@@ -32,13 +32,13 @@
             this.dgvConsulta = new System.Windows.Forms.GroupBox();
             this.btnListar = new System.Windows.Forms.Button();
             this.gboConsulta = new System.Windows.Forms.DataGridView();
-            this.cmbModo = new System.Windows.Forms.ComboBox();
-            this.lblModo = new System.Windows.Forms.Label();
-            this.lblCampo = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbModo = new System.Windows.Forms.ComboBox();
+            this.lblModo = new System.Windows.Forms.Label();
+            this.lblCampo = new System.Windows.Forms.Label();
             this.dgvConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gboConsulta)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +97,26 @@
             this.gboConsulta.TabIndex = 4;
             this.gboConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gboConsulta_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Usuario";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Limite de Credito";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Deuda";
+            this.Column4.Name = "Column4";
+            // 
             // cmbModo
             // 
             this.cmbModo.FormattingEnabled = true;
@@ -128,26 +148,6 @@
             this.lblCampo.TabIndex = 1;
             this.lblCampo.Text = "Campo";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Usuario";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Limite de Credito";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Deuda";
-            this.Column4.Name = "Column4";
-            // 
             // frmListadoOrdenado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +155,7 @@
             this.ClientSize = new System.Drawing.Size(577, 491);
             this.Controls.Add(this.dgvConsulta);
             this.Name = "frmListadoOrdenado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado Ordenado";
             this.Load += new System.EventHandler(this.frmListadoOrdenado_Load);
             this.dgvConsulta.ResumeLayout(false);
