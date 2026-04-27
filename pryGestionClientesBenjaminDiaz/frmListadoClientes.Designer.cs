@@ -55,7 +55,7 @@
             this.gboConsultaDatos.Controls.Add(this.dgvDatos);
             this.gboConsultaDatos.Location = new System.Drawing.Point(24, 22);
             this.gboConsultaDatos.Name = "gboConsultaDatos";
-            this.gboConsultaDatos.Size = new System.Drawing.Size(463, 389);
+            this.gboConsultaDatos.Size = new System.Drawing.Size(463, 484);
             this.gboConsultaDatos.TabIndex = 0;
             this.gboConsultaDatos.TabStop = false;
             this.gboConsultaDatos.Text = "Consulta de Datos";
@@ -83,6 +83,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 4;
+         
             // 
             // lblPromedioDeuda
             // 
@@ -154,7 +155,7 @@
             this.Name = "frmListadoClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListadoClientes";
-            this.Load += new System.EventHandler(this.frmListadoClientes_Load);
+            this.Load += new System.EventHandler(this.frmClientesDeudores_Load);
             this.gboConsultaDatos.ResumeLayout(false);
             this.gboConsultaDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();

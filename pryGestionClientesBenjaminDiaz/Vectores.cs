@@ -15,6 +15,7 @@ namespace pryGestionClientesBenjaminDiaz
             public String Usuario;
             public Decimal Deuda;
             public Decimal Limite;
+            internal string NombreyApellido;
         }
 
         //vector 
@@ -25,6 +26,7 @@ namespace pryGestionClientesBenjaminDiaz
 
         static public void precarga()
         {
+            IND = 0;
             Clientes[Vectores.IND].Codigo = 10;
             Clientes[Vectores.IND].Usuario = "Benjamin Diaz";
             Clientes[Vectores.IND].Deuda = 1000;

@@ -55,7 +55,7 @@
             this.gboConsultaDatos.Controls.Add(this.dgvDatos);
             this.gboConsultaDatos.Location = new System.Drawing.Point(12, 12);
             this.gboConsultaDatos.Name = "gboConsultaDatos";
-            this.gboConsultaDatos.Size = new System.Drawing.Size(508, 381);
+            this.gboConsultaDatos.Size = new System.Drawing.Size(508, 472);
             this.gboConsultaDatos.TabIndex = 1;
             this.gboConsultaDatos.TabStop = false;
             this.gboConsultaDatos.Text = "Consulta de Datos";

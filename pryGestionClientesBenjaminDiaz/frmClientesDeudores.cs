@@ -18,27 +18,48 @@ namespace pryGestionClientesBenjaminDiaz
         }
         private void Listar(object sender, EventArgs e)
         {
-            Decimal Total = 0; //Variable para acumular la deuda total de los clientes
-            dgvDatos.Rows.Clear(); //Limpio la grilla para mostrar los clientes cargados
+            // Inicializo el total y el contador de deudores
+            Decimal Total = 0;
+            Int32 cantDeudores = 0; 
+            dgvDatos.Rows.Clear();
+
+            
             for (Int32 i = 0; i < Vectores.IND; i++)
             {
-                //Agrego a la grilla los clientes cargados, mostrando su codigo, usuario, deuda y limite
-                dgvDatos.Rows.Add(Vectores.Clientes[i].Codigo, Vectores.Clientes[i].Usuario, Vectores.Clientes[i].Limite, Vectores.Clientes[i].Deuda);
-                Total += Total + Vectores.Clientes[i].Deuda; //Acumulo la deuda total de los clientes
-
-
+                if (Vectores.Clientes[i].Deuda > 0)
+                {
+                    dgvDatos.Rows.Add(
+                        Vectores.Clientes[i].Codigo,
+                        Vectores.Clientes[i].Usuario,
+                        Vectores.Clientes[i].Limite,
+                        Vectores.Clientes[i].Deuda
+                    );
+                    Total += Vectores.Clientes[i].Deuda;
+                    cantDeudores++; 
+                }
             }
-            label1.Text = Total.ToString(); //Muestro la deuda total de los clientes en el label lblTotal
-            label1.Visible = true;  //Hago visible el label lblTotal para mostrar la deuda total de los clientes
-            MessageBox.Show("Clientes listados correctamente");
+
+            label1.Text = Total.ToString();
+            label1.Visible = true;
+
+            label2.Text = cantDeudores.ToString(); // ← usás el contador
+            label2.Visible = true;
+
+           
+            if (cantDeudores > 0)
+            {
+                Decimal Promedio = Total / cantDeudores;
+                label3.Text = Promedio.ToString();
+            }
         }
+        
         private void frmClientesDeudores_Load(object sender, EventArgs e)
         {
-            Vectores.precarga(); //Llamo al metodo precarga para cargar los clientes predefinidos en el vector Clientes
+           
             Listar(sender, e);
         }
 
-      
+
     }
 
        

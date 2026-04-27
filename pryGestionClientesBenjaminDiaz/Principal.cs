@@ -24,8 +24,7 @@ namespace pryGestionClientesBenjaminDiaz
 
         private void agregarNuevosClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmManejoClientes();
-            formulario.MdiParent = this;
+            Form formulario = new frmCargarClientes ();
             formulario.Show();
         }
 
@@ -55,6 +54,7 @@ namespace pryGestionClientesBenjaminDiaz
 
         private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             Form formulario = new frmListadoClientes();
             formulario.Show();
         }
